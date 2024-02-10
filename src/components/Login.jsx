@@ -8,6 +8,7 @@ import { checkValidData } from '../utils/validate';
 
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/UserSlice';
+import { USER_AVATAR } from '../utils/constants';
 
 
 const Login = () => {
@@ -32,7 +33,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://example.com/jane-q-user/profile.jpg"
+            photoURL: USER_AVATAR,
           }).then(() => {
             const { uid, email, displayName, photoURL } = auth.currentUser;
             dispatch(
@@ -52,7 +53,7 @@ const Login = () => {
             // ...
           });
 
-          console.log(user);
+
           // ...
         })
         .catch((error) => {
@@ -68,6 +69,12 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
+          // updateProfile(user, {
+          //   displayName: user.current.value,
+          //   photoURL: USER_AVATAR,
+          // }).then(() => {
+          //   console.log(photoURL)
+          // })
 
           // ...
         })
