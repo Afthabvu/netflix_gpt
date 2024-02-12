@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaPlay } from "react-icons/fa";
 
 const VideoTitle = ({ title, overview }) => {
     return (
@@ -6,8 +7,11 @@ const VideoTitle = ({ title, overview }) => {
             <h1 className='text-6xl font-bold'>{title}</h1>
             <p className='py-5 text-lg w-1/4'>{overview}</p>
             <div className=' '>
-                <button className='bg-white text-black p-1 px-8 text-lg  rounded-lg mx-2 hover:bg-opacity-80'> Play</button>
+                <button className='bg-white text-black p-1 px-10 text-lg  rounded-lg mx-2 hover:bg-opacity-80 '>Play</button >
+
                 <button className='bg-gray-500 text-white p-1 px-8 text-lg bg-opacity-60 rounded-lg hover:bg-opacity-80'>More Info</button>
+
+
             </div>
         </div >
     )
